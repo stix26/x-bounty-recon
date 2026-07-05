@@ -1,0 +1,4 @@
+=== X/xAI ===
+www.x.com: Reflective CORS (echoes origin)
+ads.x.com: Reflective CORS
+business.x.com: Reflective CORS
