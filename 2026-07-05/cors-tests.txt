@@ -1,4 +1,133 @@
-=== X/xAI ===
-www.x.com: Reflective CORS (echoes origin)
-ads.x.com: Reflective CORS
-business.x.com: Reflective CORS
+=== CORS TESTS (fixed) ===
+=== https://www.x.com ===
+HTTP/2 301 
+date: Sun, 05 Jul 2026 05:24:01 GMT
+content-length: 0
+location: https://twitter.com/
+perf: 7402827104
+cache-control: no-cache, no-store, max-age=0
+set-cookie: __cf_bm=9DJc0HPsnU4tZ2iHmqBYfo2HyjEBm_ZbjKlk7zKnGjE-1783229041.928503-1.0.1.1-KDqSOsfuMqELY4WCHxxy5c2jBJ4SY74G0iFUvOL4YSn8XLeCNtQg58iMyL0VSMzKfA8dlvpj7Qxx983sa2GZS3oOYzxJXkmHERVkqzdvDEYy2KwdhHbFRMR1x9Kd0zAR; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:01 GMT
+x-transaction-id: e710e07324102003
+x-response-time: 1
+origin-cf-ray: a163f0e80b0fb16e-ATL
+strict-transport-security: max-age=631138519; includeSubdomains
+x-served-by: t4_a
+access-control-allow-origin: https://evil.com
+access-control-expose-headers: X-Acted-As-User-Id,X-Rate-Limit-Limit,X-Rate-Limit-Remaining,X-Rate-Limit-Reset,X-TD-Mtime
+server: cloudflare envoy
+cf-cache-status: DYNAMIC
+cf-ray: a163f0e80b0fb16e-ORD
+
+
+---
+=== https://help.x.com ===
+HTTP/2 403 
+date: Sun, 05 Jul 2026 05:24:02 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5400
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+content-security-policy: default-src 'none'; script-src 'nonce-j1WX1V9wMATyfDYJseh39u' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+origin-agent-cluster: ?1
+permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+referrer-policy: same-origin
+server-timing: chlray;desc="a163f0e9e9c493b1"
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+set-cookie: __cf_bm=4YEVHiKClI79j0fdjW9e37nF5R61jGJuycE5uXEmndA-1783229042.2247639-1.0.1.1-o0fJ.y36exC1zW4B7o5IyPJ3gpUxDUYj7NGR242twCH1WGWBy1cSBX9j66gxGburxKrzi9cThs8Bgf.dCu5W1ONpEw4TqhZ09gtIWWq73dYjZQfO.GY6v3FNyM6nBdTE; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:02 GMT
+cf-ray: a163f0e9e9c493b1-ORD
+
+---
+=== https://support.x.com ===
+HTTP/2 301 
+date: Sun, 05 Jul 2026 05:24:03 GMT
+content-length: 0
+location: https://help.x.com/
+perf: 7402827104
+cache-control: no-cache, no-store, max-age=0
+x-transaction-id: ebfad1cf129853fa
+x-response-time: 1
+origin-cf-ray: a163f0f1cd4deae8-ORD
+strict-transport-security: max-age=631138519; includeSubdomains
+x-served-by: t4_a
+access-control-allow-origin: https://evil.com
+access-control-expose-headers: X-Acted-As-User-Id,X-Rate-Limit-Limit,X-Rate-Limit-Remaining,X-Rate-Limit-Reset,X-TD-Mtime
+server: cloudflare envoy
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=qbGcJlz5.d_bMfyBrNjICTZtmj02MJvFrgdQ7BSXrbQ-1783229043.4856696-1.0.1.1-PeWk.fHS0gy4cq2SSsrylVAEAbpfnrvb7Di1Uwf2e1RJ_C0OdW9WzJ8VdC8YKFL93TatAVPJN_1Ls3kzrzqC0EE.ardcuiBz4WOXZdGTd8QCvMyo_9mNGeRaNjIPcKLx; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:03 GMT
+cf-ray: a163f0f1cd4deae8-ORD
+
+
+---
+=== https://blog.x.com ===
+HTTP/2 403 
+date: Sun, 05 Jul 2026 05:24:03 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5400
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+content-security-policy: default-src 'none'; script-src 'nonce-9Ie14csAdKWsjHOpNCq8AU' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+origin-agent-cluster: ?1
+permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+referrer-policy: same-origin
+server-timing: chlray;desc="a163f0f39bb7f833"
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+set-cookie: __cf_bm=dFR332EYXTFfpE_hrDFHnDIUgDe8u3gTSkyoCMlaLew-1783229043.776072-1.0.1.1-ExMrmtJxz0To.psq0ZJ0ePalLsJosOcC_SgqejCse9xRLDfwzJTgTy0Qw9Qs412IB9ot2G6SfVI_xeFAVwZldq69Sn8B6QHoLmIBoKr3C4kMvzMeliZNqruI5_yuulVg; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:03 GMT
+cf-ray: a163f0f39bb7f833-ORD
+
+---
+=== https://mail.x.com ===
+HTTP/2 301 
+date: Sun, 05 Jul 2026 05:24:05 GMT
+content-length: 0
+location: https://mail.google.com/a/twitter.com/
+perf: 7402827104
+cache-control: no-cache, no-store, max-age=0
+set-cookie: __cf_bm=G_TO.KrEfBb7KH9wrGT1xHVl8IAAd7dldBc8xoO6sx8-1783229045.011737-1.0.1.1-d6MOhkxzqWuWOteelXjJwuQiwSUpOk6YxOQWHv7PFzG4EGCoPaLx0nQ8NptHoe5eHHlTKxAtkaoRFlQpimC2uDQ.KyK2H4Yi_KeWxRlCRBR4XWMoedcfDZwenRmUW8Mm; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:05 GMT
+x-transaction-id: 257bdc3c975f118d
+x-response-time: 1
+origin-cf-ray: a163f0fb5f915624-ATL
+strict-transport-security: max-age=631138519; includeSubdomains
+x-served-by: t4_a
+access-control-allow-origin: https://evil.com
+access-control-expose-headers: X-Acted-As-User-Id,X-Rate-Limit-Limit,X-Rate-Limit-Remaining,X-Rate-Limit-Reset,X-TD-Mtime
+server: cloudflare envoy
+cf-cache-status: DYNAMIC
+cf-ray: a163f0fb5f915624-ORD
+
+
+---
+=== https://developer.x.com ===
+HTTP/2 200 
+date: Sun, 05 Jul 2026 05:24:05 GMT
+content-type: text/html; charset=utf-8
+perf: 7402827104
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+vary: accept-encoding
+server: cloudflare envoy
+cache-control: s-maxage=31536000
+x-nextjs-cache: HIT
+x-transaction-id: 59ed9d6025fcd737
+x-xss-protection: 0
+x-nextjs-prerender: 1, 1
+x-nextjs-stale-time: 300
+cf-cache-status: DYNAMIC
+set-cookie: guest_id_marketing=v1%3A178322904527385935; Max-Age=63072000; Expires=Tue, 04 Jul 2028 05:24:05 GMT; Path=/; Domain=.x.com; Secure; SameSite=None
+set-cookie: guest_id_ads=v1%3A178322904527385935; Max-Age=63072000; Expires=Tue, 04 Jul 2028 05:24:05 GMT; Path=/; Domain=.x.com; Secure; SameSite=None
+set-cookie: personalization_id="v1_oQoKR3SBp9UWch8MTABfvw=="; Max-Age=63072000; Expires=Tue, 04 Jul 2028 05:24:05 GMT; Path=/; Domain=.x.com; Secure; SameSite=None
+set-cookie: guest_id=v1%3A178322904527385935; Max-Age=63072000; Expires=Tue, 04 Jul 2028 05:24:05 GMT; Path=/; Domain=.x.com; Secure; SameSite=None
+set-cookie: __cf_bm=mZky1gdQuCTULcBq9L8P2uQ6eQ3uxdCjOk2vrHQo6oI-1783229045.254891-1.0.1.1-ptP.z6xEDZoh11spUaZZUPlRPnABKsR623MZkIc_Pip3Hhe.PDN.X_HmwRLKd8AIX_EAnC8o9YCEFsrrqQ3W4Li6Yo7otf7aVw97liG2jtvOmlAV_ysZEIYYuHXBHwK4; HttpOnly; SameSite=None; Secure; Path=/; Domain=x.com; Expires=Sun, 05 Jul 2026 05:54:05 GMT
+x-response-time: 7
+
+---
